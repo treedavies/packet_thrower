@@ -1,0 +1,22 @@
+
+What: Packet Thrower client and server
+
+Why: This tool was initially used to dnamically control
+     packet flows for stress testing network workloads
+
+How to use these tools.
+0. Run pt-server on 2 networked systems. pt-server takes a port number
+   as argument. 
+   Example pt-server 6666
+
+1. Use pt-ctl-client to command each system to listen for packets
+   on a port.
+   Example: pt-ctl-client 192.168.1.180 6666 'lsn,5555' 
+            pt-ctl-client 192.168.1.170 6666 'lsn,5555'
+
+2. Use pt-ctl-client to command each system to throw packets of a 
+   particular size at a target IP and port.
+   Example: pt-ctl-client  192.168.1.180 6666 'snd,6400,192.168.1.170,5555'
+            pt-ctl-client  192.168.1.170 6666 'snd,6400,192.168.1.180,5555'
+
+
