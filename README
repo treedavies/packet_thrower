@@ -1,10 +1,19 @@
 
-What: Packet Thrower client and server
+=== What: ===
+Packet Thrower client and server
 
-Why: This tool was initially used to dnamically control
-     packet flows for stress testing network workloads
 
-How to use these tools.
+=== Why: ===
+This tool was initially written to dynamically control
+packet flows for stress testing network workloads
+
+
+=== How to build: ===
+cc -o pt-ctl-client  pt-ctl-client.c 
+cc -o pt-server  pt-server.c
+
+
+=== How to use these tools: ===
 0. Run pt-server on 2 networked systems. pt-server takes a port number
    as argument. 
    Example pt-server 6666
